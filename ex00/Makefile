@@ -2,7 +2,7 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror
 
-TARGET = 00
+TARGET = claptrap
 
 SRC_DIR = src
 SRC = $(SRC_DIR)/main.cpp $(SRC_DIR)/ClapTrap.cpp

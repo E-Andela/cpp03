@@ -1,7 +1,20 @@
 #include "../inc/ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap(std::string name) : m_name {name}
+ClapTrap::ClapTrap()
+	: m_name{"Faulty"}
+	, m_hitPoints {10}
+	, m_energyPoints {10}
+	, m_attackDamage {0}
+{
+	std::cout << "Default ClapTrap constructed" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name) 
+	: m_name {name}
+	, m_hitPoints {10}
+	, m_energyPoints {10}
+	, m_attackDamage {0}
 {
 	std::cout << "ClapTrap " << m_name << " constructed" << std::endl;
 }
@@ -41,14 +54,17 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (m_energyPoints > 0)
+	if (m_energyPoints > 0 && m_hitPoints > 0)
 	{
 		--m_energyPoints;
 		std::cout << "ClapTrap " << m_name << " attacks " << target << " for " << m_attackDamage << " points of damage" << std::endl;
 	}
 	else
 	{
-		std::cout << "ClapTrap " << m_name << " tries to attack, but has no energy left" << std::endl;
+		if (m_hitPoints <= 0)
+			std::cout << "ClapTrap " << m_name << " tries to attack, but is already dead" << std::endl;
+		if (m_energyPoints <= 0)
+			std::cout << "ClapTrap " << m_name << " tries to attack, but has no energy left" << std::endl;
 	}	
 }
 
