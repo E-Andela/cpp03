@@ -2,10 +2,10 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror
 
-TARGET = 01
+TARGET = scavtrap
 
 SRC_DIR = src
-SRC = 
+SRC = $(SRC_DIR)/main.cpp $(SRC_DIR)/ClapTrap.cpp $(SRC_DIR)/ScavTrap.cpp
 
 OBJ_DIR = obj
 OBJ = $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)

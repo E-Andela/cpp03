@@ -25,7 +25,7 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 	, m_energyPoints {other.m_energyPoints}
 	, m_attackDamage {other.m_attackDamage}
 {
-	std::cout << "New Claptrap constructed in the image of " << other.m_name << std::endl;
+	std::cout << "New ClapTrap constructed in the image of " << other.m_name << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
