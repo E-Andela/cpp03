@@ -10,13 +10,13 @@ int main()
 	std::cout << std::endl;
 
 	st.guardGate();
-	st.attack("blip");
-	st1.attack("blieplbo");
+	st.attack("someone");
+	st1.attack("someone else");
 	st.beRepaired(4);
 	std::cout << std::endl;
 
 	ct = st;
 
-	ct.attack("hoi");
+	ct.attack("ScavTrap");
 	std::cout << std::endl;
 }

@@ -57,9 +57,9 @@ void ScavTrap::attack(const std::string& target)
 	else
 	{
 		if (m_hitPoints <= 0)
-			std::cout << "ClapTrap " << m_name << " tries to attack, but is already dead" << std::endl;
+			std::cout << "ScavTrap " << m_name << " tries to attack, but is already dead" << std::endl;
 		if (m_energyPoints <= 0)
-			std::cout << "ClapTrap " << m_name << " tries to attack, but has no energy left" << std::endl;
+			std::cout << "ScavTrap " << m_name << " tries to attack, but has no energy left" << std::endl;
 	}
 }
 
