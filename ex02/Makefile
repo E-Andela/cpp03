@@ -2,10 +2,13 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror
 
-TARGET = 02
+TARGET = fragtrap
 
 SRC_DIR = src
-SRC = 
+SRC = $(SRC_DIR)/main.cpp \
+		$(SRC_DIR)/ClapTrap.cpp \
+		$(SRC_DIR)/ScavTrap.cpp \
+		$(SRC_DIR)/FragTrap.cpp
 
 OBJ_DIR = obj
 OBJ = $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
