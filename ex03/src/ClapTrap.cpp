@@ -57,14 +57,14 @@ void ClapTrap::attack(const std::string& target)
 	if (m_energyPoints > 0 && m_hitPoints > 0)
 	{
 		--m_energyPoints;
-		std::cout << getType() << m_name << " attacks " << target << " for " << m_attackDamage << " points of damage" << std::endl;
+		std::cout << getType() << getName() << " attacks " << target << " for " << m_attackDamage << " points of damage" << std::endl;
 	}
 	else
 	{
 		if (m_hitPoints <= 0)
-			std::cout << getType() << m_name << " tries to attack, but is already dead" << std::endl;
+			std::cout << getType() << getName() << " tries to attack, but is already dead" << std::endl;
 		if (m_energyPoints <= 0)
-			std::cout << getType() << m_name << " tries to attack, but has no energy left" << std::endl;
+			std::cout << getType() << getName() << " tries to attack, but has no energy left" << std::endl;
 	}	
 }
 
@@ -72,18 +72,18 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (m_hitPoints <= 0)
 	{
-		std::cout << "Stop! " << m_name << " is already dead" << std::endl;
+		std::cout << "Stop! " << getName() << " is already dead" << std::endl;
 		return ;
 	}
 	m_hitPoints -= amount;
-	std::cout << getType() << m_name << " takes " << amount << " points of damage" << std::endl;
+	std::cout << getType() << getName() << " takes " << amount << " points of damage" << std::endl;
 	if (m_hitPoints < 0)
 	{
 		m_hitPoints = 0;
-		std::cout << getType() << m_name << " has lost all of its hit points and falls to the ground" << std::endl;
+		std::cout << getType() << getName() << " has lost all of its hit points and falls to the ground" << std::endl;
 	}
 	else
-		std::cout << getType() << m_name << " has " << m_hitPoints << " hit points left" << std::endl;
+		std::cout << getType() << getName() << " has " << m_hitPoints << " hit points left" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -92,16 +92,21 @@ void ClapTrap::beRepaired(unsigned int amount)
 	{
 		--m_energyPoints;
 		m_hitPoints += amount;
-		std::cout << getType() << m_name << " regains " << amount << " hit points" << std::endl;
-		std::cout << getType() << m_name << " now has " << m_hitPoints << " hit points" << std::endl;
+		std::cout << getType() << getName() << " regains " << amount << " hit points" << std::endl;
+		std::cout << getType() << getName() << " now has " << m_hitPoints << " hit points" << std::endl;
 	}
 	else
 	{
-		std::cout << getType() << m_name << " tries to repair itself, but has no energy left" << std::endl;
+		std::cout << getType() << getName() << " tries to repair itself, but has no energy left" << std::endl;
 	}
 }
 
 std::string ClapTrap::getType() const
 {
 	return "ClapTrap ";
+}
+
+std::string ClapTrap::getName() const
+{
+	return m_name;
 }

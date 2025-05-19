@@ -22,6 +22,7 @@ public:
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 	virtual std::string getType() const;
+	virtual std::string getName() const;
 };
 
 #endif

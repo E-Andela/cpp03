@@ -49,23 +49,24 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::attack(const std::string& target)
 {
+	std::cout << "ScavTrap's attack is called" << std::endl;
 	if (m_energyPoints > 0 && m_hitPoints > 0)
 	{
 		--m_energyPoints;
-		std::cout << getType() << m_name << " attacks " << target << " for " << m_attackDamage << " points of damage" << std::endl;
+		std::cout << getType() << getName() << " attacks " << target << " for " << m_attackDamage << " points of damage" << std::endl;
 	}
 	else
 	{
 		if (m_hitPoints <= 0)
-			std::cout << getType() << m_name << " tries to attack, but is already dead" << std::endl;
+			std::cout << getType() << getName() << " tries to attack, but is already dead" << std::endl;
 		if (m_energyPoints <= 0)
-			std::cout << getType() << m_name << " tries to attack, but has no energy left" << std::endl;
+			std::cout << getType() << getName() << " tries to attack, but has no energy left" << std::endl;
 	}
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << getType() << m_name << " is now in gate keeping mode" << std::endl;
+	std::cout << getType() << getName() << " is now in gate keeping mode" << std::endl;
 }
 
 std::string ScavTrap::getType() const

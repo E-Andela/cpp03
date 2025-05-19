@@ -51,16 +51,16 @@ void FragTrap::highFivesGuys()
 {
 	if (m_energyPoints <= 0)
 	{
-		std::cout << getType() << m_name << " tries to high five, but is out of energy" << std::endl;
+		std::cout << getType() << getName() << " tries to high five, but is out of energy" << std::endl;
 		return ;
 	}
 	if (m_hitPoints <= 0)
 	{
-		std::cout << getType() << m_name << " tries to high five, but is already dead" << std::endl;
+		std::cout << getType() << getName() << " tries to high five, but is already dead" << std::endl;
 		return ;
 	}
 	--m_energyPoints;
-	std::cout << getType() << m_name << " high fives you!" << std::endl;
+	std::cout << getType() << getName() << " high fives you!" << std::endl;
 }
 
 std::string FragTrap::getType() const

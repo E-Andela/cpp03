@@ -29,8 +29,9 @@ int main(void)
 	scavtrap.guardGate();
 	std::cout << std::endl;
 
-	// ClapTrap *cp = new ScavTrap("Scavvy2");
-
-	// cp->attack("target");
+	ClapTrap *cp = &scavtrap;
+	cp->attack("target");
+	std::cout << std::endl;
+	
 	return (0);
 }
